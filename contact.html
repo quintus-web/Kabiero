@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Kabiero Academy</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- Navbar -->
   <header>
     <nav class="navbar">
       <img src="assets/images/logo.png" alt="Kabiero Logo" class="logo">
@@ -19,27 +26,34 @@
     </nav>
   </header>
 
+  <!-- Contact Section -->
   <section class="contact-section">
     <h2>Contact Us</h2>
+    <p>We would love to hear from you! Please fill out the form below or find us on the map.</p>
+
     <form class="contact-form">
       <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Enter your full name">
+      <input type="text" id="name" placeholder="Enter your full name" required>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Enter your email">
+      <input type="email" id="email" placeholder="Enter your email" required>
 
       <label for="message">Message:</label>
-      <textarea id="message" placeholder="Write your message here..."></textarea>
+      <textarea id="message" placeholder="Write your message here..." required></textarea>
 
       <button type="submit">Send Message</button>
     </form>
   </section>
-<section class="map">
+
+  <!-- Map Section -->
+  <section class="map">
     <h3>Find Us</h3>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6411428730125!2d34.78737487470557!3d-0.5399666352652662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182b2186e69c134d%3A0x57917588c929fb45!2sKABIERO%20ACADEMY!5e0!3m2!1sen!2ske!4v1761153654950!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6411428730125!2d34.78737487470557!3d-0.5399666352652662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182b2186e69c134d%3A0x57917588c929fb45!2sKABIERO%20ACADEMY!5e0!3m2!1sen!2ske!4v1761153654950!5m2!1sen!2ske" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Kabiero Academy | P.O BOX 12345, Nairobi | Tel: +254 712 345 678</p>
+    <p>&copy; 2025 Kabiero Academy | P.O BOX 12345, Nairobi | Tel: +254 712 345 678 | email address : stfranciscokabieroacdemy@gmail.com</p>
   </footer>
 </body>
 </html>

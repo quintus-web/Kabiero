@@ -1,123 +1,435 @@
+/* General Styles */
 body {
-  font-family: "Poppins", sans-serif;
   margin: 0;
-  background: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
   color: #333;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Navbar */
 .navbar {
-  background: #004080;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 40px;
+  padding: 15px 30px;
+  background-color: #2c3e50;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.logo {
-  height: 60px;
-  width: auto;
+.navbar .logo {
+  width: 60px;
+  height: auto;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+  color: #f39c12;
 }
 
 .school-name {
-  font-size: 22px;
-  letter-spacing: 1px;
+  margin-left: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-  color: #ffd700;
-}
-
-/* Hero section */
+/* Hero Section */
 .hero {
-  background: url('https://images.unsplash.com/photo-1596495577886-d920f1fb7238') center/cover no-repeat;
-  text-align: center;
+  background: linear-gradient(to right, #2980b9, #6dd5fa);
   color: white;
-  padding: 100px 20px;
+  text-align: center;
+  padding: 80px 20px;
 }
 
 .hero h2 {
-  font-size: 42px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-/* Map section */
+.hero .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #f39c12;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #e67e22;
+}
+
+/* Hero History Section */
+.hero-history {
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* Map Section */
 .map {
   text-align: center;
-  margin: 40px auto;
+  margin: 50px 0;
+}
+
+.map h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.map iframe {
   width: 90%;
-}
-
-/* Page content */
-.content {
-  padding: 60px 80px;
-  background: white;
-  margin: 30px auto;
-  width: 85%;
+  max-width: 800px;
+  height: 450px;
+  border: 2px solid #2c3e50;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Contact form */
-.contact-section {
-  width: 85%;
-  background: white;
-  margin: 40px auto;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-form input, .contact-form textarea {
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.contact-form button {
-  background: #004080;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.contact-form button:hover {
-  background: #0066cc;
 }
 
 /* Footer */
 footer {
-  background: #002850;
+  background-color: #2c3e50;
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 50px;
+  font-size: 0.9rem;
+}
+
+/* About Section */
+.about-hero {
+  background: #f0f4f8;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.about-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  line-height: 1.8;
+  color: #34495e;
+}
+
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2980b9;
+}
+
+.card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #2980b9;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Academics Section */
+.academics-cards {
+  background-color: #f0f4f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.academics-cards h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card-container .card {
+  max-width: 250px;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #f0f4f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: #34495e;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background-color: #f39c12;
+  color: white;
+  padding: 15px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #e67e22;
+}
+
+/* Gallery Section */
+.gallery-section {
+  background-color: #f0f4f8;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.gallery-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.gallery-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: #34495e;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover {
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+/* ------------------- MOBILE & TABLET RESPONSIVE ------------------- */
+@media screen and (max-width: 768px) {
+
+  /* Navbar: stack items vertically */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .navbar .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar .nav-links li {
+    margin-bottom: 10px;
+  }
+
+  .school-name {
+    font-size: 1.3rem;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  /* Hero Text */
+  .hero h2, .about-hero h2, .contact-section h2, .gallery-section h2 {
+    font-size: 2rem;
+  }
+
+  .hero p, .about-hero p, .contact-section p, .gallery-section p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Hero History & About Cards */
+  .hero-history, .about-cards, .academics-cards, .card-container {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+  }
+
+  .card, .card-container .card {
+    max-width: 90%;
+  }
+
+  /* Contact Form */
+  .contact-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .map iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+}
+
+/* Smaller devices: phones */
+@media screen and (max-width: 480px) {
+
+  .hero h2, .about-hero h2, .contact-section h2, .gallery-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero p, .about-hero p, .contact-section p, .gallery-section p {
+    font-size: 0.95rem;
+  }
+
+  .school-name {
+    font-size: 1.1rem;
+  }
 }
