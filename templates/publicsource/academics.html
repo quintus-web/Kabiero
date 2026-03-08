@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics | Kabiero Academy</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <img src="{% static 'images/logo.png' %}" alt="Kabiero Logo" class="logo">
+      <h1 class="school-name">KABIERO ACADEMY</h1>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'academics' %}" class="active">Academics</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Academics Hero -->
+  <section class="hero">
+    <h2>Our Academic Programs</h2>
+    <p>We offer a comprehensive curriculum designed to meet diverse learning needs, from early childhood to junior secondary levels, ensuring students reach their fullest potential.</p>
+  </section>
+
+  <!-- Subjects/Curriculum Cards -->
+  <section class="academics-cards">
+    <h3>What We Offer</h3>
+    <div class="card-container">
+      <div class="card">
+        <h4>Early Childhood</h4>
+        <p>Play-based learning to develop foundational skills in a safe and stimulating environment.</p>
+      </div>
+      <div class="card">
+        <h4>Primary School</h4>
+        <p>Strong academic foundation with emphasis on literacy, numeracy, and critical thinking.</p>
+      </div>
+      <div class="card">
+        <h4>Extra-Curricular</h4>
+        <p>Clubs, sports, and arts to nurture talents and life skills beyond the classroom.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Kabiero Academy | P.O BOX 3783,Kisii | Tel: +254626648680/+254 729099492 | email address:stfranciscokabieroacademy@gmail.com</p>
+  </footer>
+</body>
+</html>

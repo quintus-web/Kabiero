@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bursar Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<h2>Bursar Finance Dashboard</h2>
+
+<h3>Record Payment</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Payment</button>
+</form>
+
+<hr>
+
+<h3>Recent Payments</h3>
+
+{% if payments %}
+<table>
+    <tr>
+        <th>Student</th>
+        <th>Amount</th>
+        <th>Method</th>
+        <th>Date</th>
+    </tr>
+    {% for payment in payments %}
+    <tr>
+        <td>{{ payment.student }}</td>
+        <td>{{ payment.amount_paid }}</td>
+        <td>{{ payment.payment_method }}</td>
+        <td>{{ payment.date_paid|date:"Y-m-d H:i" }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No payments recorded yet.</p>
+{% endif %}
+
+</body>
+</html>

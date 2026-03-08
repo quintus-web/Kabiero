@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Finance</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<h2>Finance Dashboard</h2>
+
+<div class="finance-summary">
+    <div class="card">
+        <h3>Total Fees</h3>
+        <p>KES {{ total_fees }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Paid</h3>
+        <p>KES {{ total_paid }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Balance</h3>
+        <p>KES {{ balance }}</p>
+    </div>
+</div>
+
+<h3>Payment History</h3>
+
+{% if payments %}
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Method</th>
+        <th>Reference</th>
+    </tr>
+    {% for payment in payments %}
+    <tr>
+        <td>{{ payment.date_paid|date:"Y-m-d" }}</td>
+        <td>{{ payment.amount_paid }}</td>
+        <td>{{ payment.payment_method }}</td>
+        <td>{{ payment.reference }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No payments recorded yet.</p>
+{% endif %}
+
+</body>
+</html>
