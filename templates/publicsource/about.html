@@ -1,34 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Kabiero Academy</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+{% block title %}About | Kabiero Academy{% endblock %}
 
-  <!-- CSS -->
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <img src="{% static 'images/logo.png' %}" alt="Kabiero Logo" class="logo">
-      <h1 class="school-name">KABIERO ACADEMY</h1>
-      <ul class="nav-links">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'about' %}" class="active">About</a></li>
-        <li><a href="{% url 'academics' %}">Academics</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
-        <li><a href="{% url 'gallery' %}">Gallery</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- About Section -->
+{% block content %}
   <section class="about-hero">
     <h2>About Us</h2>
     <p>
@@ -51,10 +26,4 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Kabiero Academy | P.O BOX 3783,Kisii | Tel: +254626648680/+254 729099492 | email address:stfranciscokabieroacademy@gmail.com</p>
-  </footer>
-</body>
-</html>
+{% endblock %}
