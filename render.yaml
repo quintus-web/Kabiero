@@ -1,14 +1,12 @@
 services:
   - type: web
     name: kabiero
-    env: python
+    runtime: python
+    plan: free
     buildCommand: "./build.sh"
     startCommand: "gunicorn backend.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: backend.settings
-      - key: PYTHON_VERSION
-        value: 3.11.0
       - key: DEBUG
-        value: False
-    runtime: python
+        value: false
