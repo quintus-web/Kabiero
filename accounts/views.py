@@ -13,11 +13,14 @@ def init_superuser(request):
     """Emergency superuser creation endpoint"""
     
     # Check if superuser exists
-    if User.objects.filter(is_superuser=True).exists():
+    superusers = User.objects.filter(is_superuser=True)
+    if superusers.exists():
+        usernames = list(superusers.values_list('username', flat=True))
         return JsonResponse({
             'status': 'exists',
             'message': 'Superuser already exists',
-            'count': User.objects.filter(is_superuser=True).count()
+            'count': superusers.count(),
+            'usernames': usernames
         })
     
     # Create superuser
@@ -36,10 +39,25 @@ def init_superuser(request):
             'status': 'created',
             'message': f'Superuser "{username}" created successfully',
             'username': username,
-            'password': password
+            'password': password,
+            'login_url': '/admin/'
         })
     except Exception as e:
         return JsonResponse({
             'status': 'error',
-            'message': str(e)
+            'message': str(e),
+            'total_users': User.objects.count()
         }, status=500)
+
+@csrf_exempt
+def check_users(request):
+    """Debug endpoint to check existing users"""
+    users = User.objects.all()
+    superusers = User.objects.filter(is_superuser=True)
+    
+    return JsonResponse({
+        'total_users': users.count(),
+        'total_superusers': superusers.count(),
+        'superuser_usernames': list(superusers.values_list('username', flat=True)),
+        'all_usernames': list(users.values_list('username', flat=True))
+    })
