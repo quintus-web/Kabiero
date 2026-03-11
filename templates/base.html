@@ -23,13 +23,13 @@
                 <li><a href="{% url 'academics' %}">Academics</a></li>
                 <li><a href="{% url 'gallery' %}">Gallery</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
-                <li><a href="{% url 'mpesa-payment' %}">Pay Fees</a></li>
-                <li><a href="/admin/">Admin</a></li>
+                <li><a href="{% url 'mpesa-payment' %}" class="btn-pay">Pay Fees</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
-                    <li><a href="/accounts/logout/">Logout</a></li>
+                    <li><a href="{% url 'admin-dashboard' %}" class="btn-dashboard">Dashboard</a></li>
+                    <li><a href="/admin/" class="btn-admin">Admin Panel</a></li>
+                    <li><a href="/accounts/logout/" class="btn-logout">Logout</a></li>
                 {% else %}
-                    <li><a href="/accounts/login/">Login</a></li>
+                    <li><a href="/accounts/login/" class="btn-login">Staff Login</a></li>
                 {% endif %}
             </ul>
         </nav>

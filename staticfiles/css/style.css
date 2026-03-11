@@ -85,6 +85,53 @@ body {
   transform: translateY(-2px);
 }
 
+/* Action Buttons */
+.navbar .nav-links li a.btn-pay {
+  background: var(--secondary);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.navbar .nav-links li a.btn-pay:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.navbar .nav-links li a.btn-login,
+.navbar .nav-links li a.btn-dashboard {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.navbar .nav-links li a.btn-login:hover,
+.navbar .nav-links li a.btn-dashboard:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.navbar .nav-links li a.btn-admin {
+  background: var(--accent);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.navbar .nav-links li a.btn-admin:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.navbar .nav-links li a.btn-logout {
+  background: #ef4444;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.navbar .nav-links li a.btn-logout:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero {
   min-height: 85vh;
