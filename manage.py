@@ -18,5 +18,15 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    import os
+    from django.core.management import call_command
+
+    # Run migrations automatically on Render (Free plan workaround)
+    if os.environ.get("RENDER") == "true":
+        try:
+            call_command("migrate", interactive=False)
+        except Exception as e:
+            print("Migration skipped or already applied:", e)
+
     main()
